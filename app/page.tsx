@@ -1,103 +1,232 @@
+
+import Link from "next/link";
 import Image from "next/image";
+import Header from "./_components/Header";
+import { Button } from "./_components/ui/button";
+import Footer from "./_components/Footer";
+import AnimateOnScroll from "./_components/AnimateOnScroll";
+import WireSphereCanvas from "./_components/WireSphere";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen flex flex-col">
+      <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="py-20 md:py-40 border-b border-gray-200">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col items-center text-center">
+              <AnimateOnScroll animation="fade-in" className="relative w-full max-w-xl h-64 mb-12">
+                    <WireSphereCanvas />
+              </AnimateOnScroll>
+              <div className="max-w-3xl mx-auto mb-12">
+                <AnimateOnScroll animation="fade-in-up">
+                  <h1 className="text-3xl md:text-5xl font-bold mb-6">
+                    Welcome to the Attention.<br />
+                    I design attention-grabbing designs.
+                  </h1>
+                </AnimateOnScroll>
+                <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+                  <AnimateOnScroll animation="fade-in-up" delay={200} className="text-sm">
+                    <p>Feb 2023—Present</p>
+                    <p>Available for contract/freelance work</p>
+                    <p>Based in Seoul, Korea</p>
+                    <p>(+82) 0123 4567</p>
+                  </AnimateOnScroll>
+                  <AnimateOnScroll animation="fade-in-up" delay={400} className="flex flex-col items-center">
+                    <p className="mb-2">Contact me!</p>
+                    <p className="mb-4">design.attention@gmail.com</p>
+                    <Link href="/contact">
+                      <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-6">
+                        Let&apos;s work together!
+                      </Button>
+                    </Link>
+                  </AnimateOnScroll>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Design Services Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <AnimateOnScroll animation="fade-in-up">
+                <h2 className="text-2xl md:text-3xl font-bold mb-8">I can design for you</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={200}>
+                <p className="text-lg mb-12">
+                  Hello! I am a designer from Seoul, a product designer who wakes up everyday excited to solve problems through
+                  beautiful & data-driven designs. I help brands define their culture and thrive. From brand strategy to design to
+                  communication, we create something that stands out today, so that people can hold onto tomorrow.
+                  Every brand has the power to shape the future. We help them make their impact meaningful and memorable.
+                </p>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={400}>
+                <h3 className="text-xl font-bold mb-6">About me</h3>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* Design Process Section */}
+        <section className="py-20 bg-[#f8f8f8]">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto mb-12 text-center">
+              <AnimateOnScroll animation="fade-in-up">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">This is how<br />my design works</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={200}>
+                <p className="mb-8">
+                  There are a total of six design process. It can change depending on the situation, but it&apos;s a process I learned
+                  from making the best results. Click on more to see the detailed design process!
+                </p>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={300} className="inline-block">
+                <h3 className="text-lg font-bold mb-4">Design process</h3>
+                <Link href="/about">
+                  <Button variant="outline" className="border border-gray-300 rounded-full px-6">
+                    More
+                  </Button>
+                </Link>
+              </AnimateOnScroll>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <AnimateOnScroll animation="fade-in-up" delay={100} className="p-6">
+                <div className="mb-4">
+                  <span className="text-sm font-medium">01</span>
+                  <h4 className="text-lg font-bold">Identify the Problem</h4>
+                </div>
+                <p>Isolate the critical issue by dissecting user pain points and initial observations</p>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={200} className="p-6">
+                <div className="mb-4">
+                  <span className="text-sm font-medium">02</span>
+                  <h4 className="text-lg font-bold">Understand the Scope</h4>
+                </div>
+                <p>Assess the user needs, business objectives, and technical constraints to frame the design challenge.</p>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={300} className="p-6">
+                <div className="mb-4">
+                  <span className="text-sm font-medium">03</span>
+                  <h4 className="text-lg font-bold">Design Solutions</h4>
+                </div>
+                <p>Ideate solutions to resolve immediate user needs while staying true to the overarching product vision.</p>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Work Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto mb-12">
+              <AnimateOnScroll animation="fade-in-up">
+                <h2 className="text-2xl md:text-3xl font-bold mb-8">Work</h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={200}>
+                <p className="mb-8">
+                  Understand the concept of the brand, understand the inconvenience
+                  of customers, and design. These are some of the projects we have
+                  been working on in recent years.
+                </p>
+              </AnimateOnScroll>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+              {/* Project 1 */}
+              <AnimateOnScroll animation="slide-in-right">
+                <div className="mb-6 aspect-video bg-gray-100 overflow-hidden relative">
+                  <Image
+                    src="https://ext.same-assets.com/1013325554/3947675964.jpeg"
+                    alt="Brand identity project"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold">Brand identity / 2024</h3>
+                  <p>The package was designed using soft fonts that fit the shape of the curved product and the brand concept.</p>
+                </div>
+                <Link href="#">
+                  <Button variant="link" className="p-0 h-auto text-gray-500 hover:text-primary">
+                    Download it
+                  </Button>
+                </Link>
+              </AnimateOnScroll>
+
+              {/* Project 2 */}
+              <AnimateOnScroll animation="slide-in-left">
+                <div className="mb-6 aspect-video bg-gray-100 overflow-hidden relative">
+                  <Image
+                    src="https://ext.same-assets.com/1013325554/2542594904.jpeg"
+                    alt="Mobile project"
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold">Mobile / 2024</h3>
+                  <p>I worked on a mobile portfolio page with a neat concept that can give blue and orange points and trust.</p>
+                </div>
+                <Link href="#">
+                  <Button variant="link" className="p-0 h-auto text-gray-500 hover:text-primary">
+                    Download it
+                  </Button>
+                </Link>
+              </AnimateOnScroll>
+            </div>
+
+            <AnimateOnScroll animation="fade-in-up" className="text-center">
+              <Link href="/work">
+                <Button variant="outline" className="border border-gray-300 rounded-full px-6">
+                  More
+                </Button>
+              </Link>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Brand Value Section */}
+        <section className="py-20 bg-[#f8f8f8] text-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <AnimateOnScroll animation="fade-in-up">
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                  Attention<br />
+                  Increase the value<br />
+                  of the brand
+                </h2>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={200}>
+                <p className="mb-8">
+                  I design attention-grabbing designs.<br />
+                  I love analyzing brand values and creating something familiar yet new.
+                </p>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={400}>
+                <h3 className="text-2xl font-bold mb-6">
+                  I design<br />
+                  attention-grabbing designs
+                </h3>
+              </AnimateOnScroll>
+              <AnimateOnScroll animation="fade-in-up" delay={600}>
+                <p className="mb-8">
+                  I help brands define their culture and thrive.<br />
+                  From brand strategy to design to communication, we create<br />
+                  something that stands out today, so that people can hold<br />
+                  onto tomorrow.
+                </p>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      <Footer />
     </div>
   );
 }

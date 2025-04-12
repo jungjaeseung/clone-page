@@ -24,7 +24,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full py-6 border-b border-gray-200">
+    <header className="w-full py-6 border-b border-gray-200 z-10">
       <div className="container mx-auto flex justify-between items-center px-4">
         <Link href="/" className="text-xl font-bold">
           Attention
